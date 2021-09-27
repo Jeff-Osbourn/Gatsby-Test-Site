@@ -55,6 +55,5 @@ Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cl
 
 ## Link to Gatsby Site
   
-    - [My-First-Gatsby-Site](https://gatsbytestsitemain55488.gatsbyjs.io/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://gatsbytestsitemain55488.gatsbyjs.io/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    https://gatsbytestsitemain55488.gatsbyjs.io/
     
