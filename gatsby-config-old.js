@@ -14,10 +14,10 @@ module.exports = {
       }
     },
 	{
-		resolve: "gatsby-source-wordpress",
+		resolve: 'gatsby-source-wordpress',
 		options: {
-			url: `https://csc496wordpress.tldr.dev/graphql`,
-			protocol: `https`,
+			url: 'https://csc496wordpress.tldr.dev/graphql',
+			protocol: 'https',
 			hostingWPCOM: false,
 			useACF: false
 		}
