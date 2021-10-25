@@ -50,7 +50,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
   const allPokemon = await getPokemonData(["pikachu", "charizard", "squirtle"])
   // Create a page that lists Pokémon.
   createPage({
-    path: `/`,
+    path: `/PokemonTest`,
     component: require.resolve("./src/templates/PokemonTemp.js"),
     context: { allPokemon },
   })
