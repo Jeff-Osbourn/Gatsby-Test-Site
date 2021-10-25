@@ -1,9 +1,10 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
+
 class Post extends Component {
   render() {
-    const post = this.props.data.wpPost
+    const post = this.props.data.allWpPost
     return (
       <>
         <h1>{post.title}</h1>
@@ -18,10 +19,12 @@ Post.propTypes = {
 }
 export default Post
 export const pageQuery = graphql`
-  query($id: String!) {
-    wpPost(id: { eq: $id }) {
-      title
-      content
+  query {
+    allWpPost {
+		nodes {
+			title
+			content
+		}
     }
   }
 `

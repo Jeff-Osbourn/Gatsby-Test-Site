@@ -6,6 +6,7 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
 	"gatsby-transformer-sharp",
+	"axios",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -17,6 +18,9 @@ module.exports = {
 		resolve: "gatsby-source-wordpress",
 		options: {
 			url: `https://csc496wordpress.tldr.dev/graphql`,
+			schema: {
+				typePrefix: `Wp`,
+			},
 			protocol: `https`,
 			hostingWPCOM: false,
 			useACF: false
