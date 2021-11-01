@@ -22,7 +22,8 @@ const Layout = ({ pageTitle, children }) => {
   `)
   
   return (
-    <div className={container} style={{
+    <div className={container}
+		  style={{
           backgroundColor: 'var(--bg)',
           color: 'var(--textNormal)',
           transition: 'color 0.2s ease-out, background 0.2s ease-out',
