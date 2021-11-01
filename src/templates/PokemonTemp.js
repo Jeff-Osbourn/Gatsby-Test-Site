@@ -1,11 +1,15 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
+import Layout from '../components/layout'
+import Navbar from '../components/Navbar/Navbar'
 
 export default function AllPokemon({ pageContext: { allPokemon } }) {
   return (
+  
+  <Layout pageTitle="Pokedex">
     <div>
-      <h1>Behold, the Pokémon!</h1>
+      <h3>Behold, the Pokémon!</h3>
       <ul>
         {allPokemon.map(pokemon => (
           <li key={pokemon.id}>
@@ -15,5 +19,7 @@ export default function AllPokemon({ pageContext: { allPokemon } }) {
         ))}
       </ul>
     </div>
+	</Layout>
+	
   )
 }

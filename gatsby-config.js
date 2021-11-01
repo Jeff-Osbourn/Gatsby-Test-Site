@@ -7,6 +7,8 @@ module.exports = {
     "gatsby-plugin-sharp",
 	"gatsby-transformer-sharp",
 	"axios",
+	"gatsby-plugin-styled-components",
+	"gatsby-plugin-dark-mode",
     {
       resolve: "gatsby-source-filesystem",
       options: {

@@ -1,15 +1,18 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import Navbar from '../components/Navbar/Navbar'
 
-const PokemonPage = ({ data }) => {
+const TestPage = ({ data }) => {
   return (
-    <Layout pageTitle="Pokemon">
+	<Navbar>
+    <Layout pageTitle="Test">
 		<div>
 			Hello!
 		</div>
     </Layout>
+	</Navbar>
   )
 }
 
-export default PokemonPage
+export default TestPage

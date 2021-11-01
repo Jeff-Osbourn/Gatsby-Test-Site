@@ -13,10 +13,12 @@ class Post extends Component {
     )
   }
 }
+
 Post.propTypes = {
   data: PropTypes.object.isRequired,
   edges: PropTypes.array,
 }
+
 export default Post
 export const pageQuery = graphql`
   query {

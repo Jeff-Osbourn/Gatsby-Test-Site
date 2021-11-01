@@ -24,7 +24,8 @@ exports.createPages = async ({ graphql, actions }) => {
   allPosts.forEach(post => {
     createPage({
       // will be the url for the page
-      path: post.uri,
+	  // post.uri
+      path: `/blog`,
       // specify the component template of your choice
       component: slash(postTemplate),
       // In the ^template's GraphQL query, 'id' will be available
@@ -50,7 +51,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
   const allPokemon = await getPokemonData(["pikachu", "charizard", "squirtle"])
   // Create a page that lists Pokémon.
   createPage({
-    path: `/PokemonTest`,
+    path: `/Pokemon`,
     component: require.resolve("./src/templates/PokemonTemp.js"),
     context: { allPokemon },
   })

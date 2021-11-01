@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import {
   container,
   heading,
@@ -8,7 +9,7 @@ import {
   navLinkText,
   siteTitle,
 } from './layout.module.css'
-
+	
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -19,11 +20,28 @@ const Layout = ({ pageTitle, children }) => {
       }
     }
   `)
-
+  
   return (
-    <div className={container}>
+    <div className={container} style={{
+          backgroundColor: 'var(--bg)',
+          color: 'var(--textNormal)',
+          transition: 'color 0.2s ease-out, background 0.2s ease-out',
+        }}>
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
-      <header className={siteTitle}>{data.site.siteMetadata.title}</header>
+      <header className={siteTitle}>{data.site.siteMetadata.title}
+		  <ThemeToggler>
+			{({ theme, toggleTheme }) => (
+			  <h6>
+			  Dark Mode
+				<input
+				  type="checkbox"
+				  onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+				  checked={theme === 'dark'}
+				/>{' '}
+			  </h6>
+			)}
+		  </ThemeToggler>
+	  </header>
       <nav>
         <ul className={navLinks}>
           <li className={navLinkItem}>
@@ -47,8 +65,8 @@ const Layout = ({ pageTitle, children }) => {
             </Link>
           </li>
 		  <li className={navLinkItem}>
-            <Link to="/PokemonTest" className={navLinkText}>
-              PokemonTest
+            <Link to="/TestPage" className={navLinkText}>
+              TestPage
             </Link>
           </li>
         </ul>
