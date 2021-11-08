@@ -1,7 +1,7 @@
 // Logo.js
 import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 const LogoWrap = styled.div`
@@ -15,7 +15,7 @@ const LogoWrap = styled.div`
 const Logo = () => {
   const data = useStaticQuery(graphql`
     query {
-      fileName: file(relativePath: { eq: "/images/destiny2_Wallpaper1.png" }) {
+      fileName: file(relativePath: { eq: "/images/icon.png" }) {
         childImageSharp {
           fluid(maxWidth: 50, pngQuality: 80) {
             ...GatsbyImageSharpFluid
@@ -27,7 +27,7 @@ const Logo = () => {
 
   return (
     <LogoWrap as={Link} to="/">
-      <Img fluid={data.fileName.childImageSharp.fluid} alt="logo" />
+	  <GatsbyImage fluid={data.fileName.childImageSharp.fluid} alt="logo" />
     </LogoWrap>
   )
 }
