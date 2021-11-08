@@ -2,11 +2,6 @@ import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 
-import { useStyledDarkMode } from "gatsby-styled-components-dark-mode";
-import { useContext } from "react";
-import styled, { ThemeContext } from "styled-components";
-import { GlobalStyle } from "./theme";
-
 import {
   container,
   heading,
@@ -17,14 +12,6 @@ import {
 } from './layout.module.css'
 	
 //class Layout extends React.Component {
-	
-const MainHeading = styled.h2`
-  color: rgb(${(props) => props.theme.palette.mainBrand});
-`;
-
-export const Layout = (props) => {
-  const theme = useContext(ThemeContext);
-  const { isDark, toggleDark } = useStyledDarkMode();
 	
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -39,26 +26,7 @@ const Layout = ({ pageTitle, children }) => {
   
   //render () {
   return (
-    <div>
-	
-	<GlobalStyle theme={theme} />
-      <header>
-        <MainHeading>
-          <a href={"#"}>Gatsby Dark Theme</a>
-        </MainHeading>
-        <div>
-          <label>
-            <input
-              type="checkbox"
-              onChange={() => toggleDark()}
-              checked={!!isDark}
-            />{" "}
-            Dark mode
-          </label>
-        </div>
-      </header>
-      <main>{props.children}</main>
-	  
+    <div>  
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
       <nav>
         <ul className={navLinks}>
@@ -96,6 +64,6 @@ const Layout = ({ pageTitle, children }) => {
     </div>
   )
 }
-}
+//}
 //}
 export default Layout

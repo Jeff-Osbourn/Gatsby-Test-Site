@@ -28,12 +28,6 @@ module.exports = {
 			useACF: false
 		}
 	},
-	{
-      resolve: "gatsby-styled-components-dark-mode",
-      options: {
-        light: require(`${__dirname}/src/components/theme.js`).lightTheme,
-        dark: require(`${__dirname}/src/components/theme.js`).darkTheme,
-     },
-	}
+	
   ],
 };
