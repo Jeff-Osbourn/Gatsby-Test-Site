@@ -26,8 +26,29 @@ const Layout = ({ pageTitle, children }) => {
   
   //render () {
   return (
-    <div>  
+    <div style={{
+          backgroundColor: 'var(--bg)',
+          color: 'var(--textNormal)',
+          transition: 'color 0.2s ease-out, background 0.2s ease-out',
+        }}>  
+	
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
+	  
+	  <h4>
+		<ThemeToggler>
+			{({ theme, toggleTheme }) => (
+			  <label>
+				<input
+				  type="checkbox"
+				  onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+				  checked={theme === 'dark'}
+				/>{' '}
+				Dark mode
+			  </label>
+			)}
+		  </ThemeToggler>
+	  </h4>
+	  
       <nav>
         <ul className={navLinks}>
           <li className={navLinkItem}>
