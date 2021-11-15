@@ -7,9 +7,9 @@ const TestPage = ({ data }) => {
   return (
 	<Navbar>
     <Layout pageTitle="Test">
-		<div>
-			Hello!
-		</div>
+			<div>
+				Hello!
+			</div>
     </Layout>
 	</Navbar>
   )

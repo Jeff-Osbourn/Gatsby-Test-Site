@@ -4,34 +4,34 @@ const { slash } = require(`gatsby-core-utils`)
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
    // query content for WordPress posts
-  const {
-    data: {
-      allWpPost: { nodes: allPosts },
-    },
-  } = await graphql(`
-    query {
-      allWpPost {
-        nodes {
+   const test = await graphql(`
+  query {
+    allWpPost {
+      edges {
+        node {
           id
-          uri
-		  content
+          slug
+          title
+          content
         }
       }
     }
+  }  
   `)
   
   const postTemplate = path.resolve(`./src/templates/post.js`)
-  allPosts.forEach(post => {
+  test.data.allPosts.edges.forEach(edge => {
     createPage({
       // will be the url for the page
-	  // post.uri
-      path: `/blog`,
+	    // post.uri
+      //path: `/blog`,
+	    path: edge.node.slug,
       // specify the component template of your choice
       component: slash(postTemplate),
       // In the ^template's GraphQL query, 'id' will be available
       // as a GraphQL variable to query for this post's data.
       context: {
-        id: post.id,
+        id: edge.node.id,
       },
     })
   })
@@ -47,6 +47,7 @@ const getPokemonData = names =>
       return { ...pokemon }
     })
   )
+  
 exports.createPages = async ({ actions: { createPage } }) => {
   const allPokemon = await getPokemonData(["pikachu", "charizard", "squirtle"])
   // Create a page that lists Pokémon.

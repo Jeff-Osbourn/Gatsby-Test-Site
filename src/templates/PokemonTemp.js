@@ -9,7 +9,7 @@ export default function AllPokemon({ pageContext: { allPokemon } }) {
   
   <Layout pageTitle="Pokedex">
     <div>
-      <h3>Behold, the Pokémon!</h3>
+      <h3> Behold, the Pokémon! </h3>
       <ul>
         {allPokemon.map(pokemon => (
           <li key={pokemon.id}>
