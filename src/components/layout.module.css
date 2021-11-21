@@ -26,6 +26,10 @@
   margin: 3rem 0;
 }
 
+.page-text {
+  color: black;
+}
+
 body {
   --bg: white;
   --textNormal: #222;

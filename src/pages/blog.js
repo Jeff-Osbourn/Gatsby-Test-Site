@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
 const BlogPage = ({ data }) => {
+  
   return (
     <Layout pageTitle="My Blog Posts" style={{
           backgroundColor: 'var(--bg)',
@@ -25,9 +26,9 @@ const BlogPage = ({ data }) => {
 export const query = graphql`
   query {
     allFile {
-      nodes {
-        name
-      }
+        nodes {
+          name
+        }
     }
   }
 `

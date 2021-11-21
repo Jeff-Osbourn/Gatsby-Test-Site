@@ -56,4 +56,8 @@ exports.createPages = async ({ actions: { createPage } }) => {
     component: require.resolve("./src/templates/PokemonTemp.js"),
     context: { allPokemon },
   })
+
+  exports.createPages = async function ({actions, graphql}) {
+    const {data} = await graphql
+  }
 }
