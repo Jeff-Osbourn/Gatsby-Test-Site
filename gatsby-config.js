@@ -5,10 +5,10 @@ module.exports = {
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
-	"gatsby-transformer-sharp",
-	"axios",
-	"gatsby-plugin-styled-components",
-	"gatsby-plugin-dark-mode",
+		"gatsby-transformer-sharp",
+		"axios",
+		"gatsby-plugin-styled-components",
+		"gatsby-plugin-dark-mode",
 		{
       resolve: "gatsby-plugin-mdx",
       options: {

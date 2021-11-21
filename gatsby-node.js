@@ -57,7 +57,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
     context: { allPokemon },
   })
 
-  exports.createPages = async function ({actions, graphql}) {
-    const {data} = await graphql
-  }
+  //exports.createPages = async function ({actions, graphql}) {
+    //const {data} = await graphql
+  //}
 }
